@@ -1,0 +1,12 @@
+.slide {
+    height: 100vh;
+    width: 100wh;
+}
+
+.slide-1 {
+    background-color: black;
+}
+
+.slide-2 {
+    background-color: brown;
+}
