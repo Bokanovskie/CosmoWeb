@@ -1,1 +1,2 @@
-nodes_module/
+node_modules/
+.idea/
