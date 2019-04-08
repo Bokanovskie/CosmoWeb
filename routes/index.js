@@ -1,7 +1,6 @@
 const routes = require('express').Router()
+const indexController = require('../controller/indexController')
 
-routes.get('/', (req, res) => {
-    res.status(200).render('index.html')
-})
+routes.get('/', indexController.index)
 
 module.exports = routes

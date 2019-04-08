@@ -1,6 +1,7 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
-const routes = require('./routes/routing.js')
+const indexRouter = require('./routes/index.js')
+const adminRouter = require('./routes/admin')
 
 const app = express()
 
@@ -12,8 +13,8 @@ nunjucks.configure(
     express: app
   })
 
-app.use('/', routes)
-app.use('/admin', routes)
+app.use('/', indexRouter)
+app.use('/admin', adminRouter)
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')

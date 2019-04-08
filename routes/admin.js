@@ -1,7 +1,10 @@
 const routes = require('express').Router()
 
-routes.get('/admin', (req, res) => {
-    res.status(200).render('admin_dashboard.html')
-})
+const adminController = require('../controller/adminController')
+const postController = require('../controller/postController')
+
+routes.get('/', adminController.dashboard)
+
+routes.get('/create/post', postController.create_product)
 
 module.exports = routes
