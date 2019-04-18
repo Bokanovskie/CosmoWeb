@@ -9,7 +9,9 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 routes.get('/', adminController.dashboard)
 
-routes.get('/create/post', postController.create_post_action_get)
-routes.post('/create/post', urlencodedParser, postController.create_post_action_post)
+routes.get('/post/create', postController.create_post_action_get)
+routes.post('/post/create', urlencodedParser, postController.create_post_action_post)
+
+routes.get('/post/:id', postController.post_action_get)
 
 module.exports = routes

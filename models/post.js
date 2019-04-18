@@ -8,7 +8,7 @@ let postSchema = new mongoose.Schema({
 postSchema
     .virtual('url')
     .get(function () {
-        return '/post/' + this._id
+        return '/admin/post/' + this._id
     })
 
 module.exports = mongoose.model('Post', postSchema)
