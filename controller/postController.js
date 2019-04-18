@@ -1,11 +1,19 @@
 const postRepository = require('../repository/postRepository.js')
 
-// Create post action GET
+/**
+ * Create post action GET
+ * @param req | Request
+ * @param res | Response
+ */
 exports.create_post_action_get = (req, res) => {
     res.status(200).render('post/create_post.html')
 }
 
-// Create post action POST
+/**
+ * Create post action POST
+ * @param req | Request
+ * @param res | Response
+ */
 exports.create_post_action_post = (req, res) => {
     const formData = req.body
 
@@ -18,7 +26,11 @@ exports.create_post_action_post = (req, res) => {
         })
 }
 
-// Get post action by id
+/**
+ * Get post action by id
+ * @param req | Request
+ * @param res | Response
+ */
 exports.post_action_get = (req, res) => {
     const postId = req.params.id
 
