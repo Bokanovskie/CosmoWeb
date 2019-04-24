@@ -21,8 +21,7 @@
                 Name
             </th>
             <th>
-            </th>
-            <th>
+                Action
             </th>
         </tr>
         {% for category in articleCategories %}
@@ -32,9 +31,7 @@
                 </td>
                 <td>
                     <a href="#">Edit</a>
-                </td>
-                <td>
-                    <a href="#">Delete</a>
+                    <a href="/admin/article/category/delete/{{ category._id }}">Delete</a>
                 </td>
             </tr>
         {% endfor %}

@@ -45,7 +45,7 @@ exports.delete_article_category = (id) => {
 
     return new Promise((resolve, reject) => {
         articleCategoryModel
-            .findOneAndRemove({
+            .findOneAndDelete({
                 '_id': id
             })
             .then(response => {

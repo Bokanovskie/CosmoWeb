@@ -19,5 +19,6 @@ routes.get('/article/:id', articleController.get_article)
 routes.get('/article/category/create', articleCategoryController.create_article_category_get)
 routes.post('/article/category/create', urlencodedParser, articleCategoryController.create_article_category_post)
 routes.get('/article/category/:id', articleCategoryController.get_article_category)
+routes.get('/article/category/delete/:id', articleCategoryController.delete_article_category)
 
 module.exports = routes
