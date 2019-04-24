@@ -3,12 +3,24 @@
 {% block content %}
     <h1>Create post</h1>
 
-    <div class="sample">
-        <form action="/admin/article/create" method="post">
-            <label for="title">Title</label>
-            <input id="title" name="title" type="text" />
-            <textarea id="content" name="content"></textarea>
-            <input type="submit" value="Create" />
-        </form>
-    </div>
+    <form action="/admin/article/create" method="post">
+
+        <!-- Title -->
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" />
+
+        <!-- Article category -->
+        <label for="article-category">Post category</label>
+        <select id="article-category" name="category">
+            {% for category in articleCategories %}
+                <option value="{{ category._id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Rich text editor -->
+        <textarea id="content" name="content"></textarea>
+
+        <!-- Submit button -->
+        <input type="submit" value="Create" />
+    </form>
 {% endblock %}

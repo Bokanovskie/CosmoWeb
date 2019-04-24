@@ -1,5 +1,10 @@
 const articleCategoryModel = require('../models/article_category')
 
+/**
+ * Get all article category
+ *
+ * @returns {Promise<any>} | article category list or error
+ */
 exports.get_all_article_category = () => {
     return new Promise((resolve, reject) => {
         articleCategoryModel.find({})
@@ -24,8 +29,9 @@ exports.get_article_category_by_id = (id) => {
 
 /**
  * Create category post function
+ *
  * @param formData
- * @returns {Promise<any>}
+ * @returns {Promise<any>} | Created article category or error
  */
 exports.create_article_category = (formData) => {
     let category = new articleCategoryModel(formData)
@@ -41,6 +47,12 @@ exports.create_article_category = (formData) => {
     })
 }
 
+/**
+ * Delete article category
+ *
+ * @param id
+ * @returns {Promise<any>}
+ */
 exports.delete_article_category = (id) => {
 
     return new Promise((resolve, reject) => {

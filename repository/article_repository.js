@@ -24,6 +24,7 @@ exports.get_article_by_id = (id) => {
     return new Promise((resolve, reject) => {
         if(id){
             articleModel.findById(id)
+                .populate('category')
                 .then(doc => {
                     resolve(doc)
                 })

@@ -2,7 +2,7 @@
 
 {% block content %}
     {{ article.title }}
-
+    {{ article.category.name }}
     {{ article.content | safe }}
 
 {% endblock %}
