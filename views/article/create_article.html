@@ -3,9 +3,12 @@
 {% block content %}
     <h1>Create post</h1>
 
-    <form action="/admin/article/create" method="post">
-        <label for="title">Title</label>
-        <input id="title" name="title" type="text" />
-        <input type="submit" value="Create" />
-    </form>
+    <div class="sample">
+        <form action="/admin/article/create" method="post">
+            <label for="title">Title</label>
+            <input id="title" name="title" type="text" />
+            <textarea id="content" name="content"></textarea>
+            <input type="submit" value="Create" />
+        </form>
+    </div>
 {% endblock %}

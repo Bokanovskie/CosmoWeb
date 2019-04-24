@@ -45,6 +45,12 @@ exports.get_article = (req, res) => {
     }
 }
 
+/**
+ * Delete article by id
+ *
+ * @param req
+ * @param res
+ */
 exports.delete_article = (req, res) => {
     const articleId = req.params.id
 

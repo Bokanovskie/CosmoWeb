@@ -2,4 +2,7 @@
 
 {% block content %}
     {{ article.title }}
+
+    {{ article.content | safe }}
+
 {% endblock %}

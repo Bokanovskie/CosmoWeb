@@ -10,13 +10,13 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 routes.get('/', adminController.dashboard)
 
-// Post routes
+// Article routes
 routes.get('/article/create', articleController.create_article_action_get)
 routes.post('/article/create', urlencodedParser, articleController.create_article_action_post)
 routes.get('/article/:id', articleController.get_article)
 routes.get('/article/delete/:id', articleController.delete_article)
 
-// Category post route
+// Article category route
 routes.get('/article/category/create', articleCategoryController.create_article_category_get)
 routes.post('/article/category/create', urlencodedParser, articleCategoryController.create_article_category_post)
 routes.get('/article/category/:id', articleCategoryController.get_article_category)
