@@ -6,7 +6,29 @@
     <h2>Posts</h2>
     <a href="/admin/article/create">Create post</a>
 
+    <br><br>
 
+    <table>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        {% for article in articles %}
+        <tr>
+            <td>
+                <a href="{{ article.url }}">{{ article.title }}</a>
+            </td>
+            <td>
+                <a href="#">Edit</a>
+                <a href="/admin/article/delete/{{ article._id }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 
     <br><br>
 

@@ -2,7 +2,7 @@ const articleCategoryRepository = require('../repository/article_category_reposi
 
 /**
  * Create article category GET method
- * 
+ *
  * @param req
  * @param res
  */

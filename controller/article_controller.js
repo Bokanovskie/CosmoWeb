@@ -34,7 +34,7 @@ exports.create_article_action_post = (req, res) => {
 exports.get_article = (req, res) => {
     const articleId = req.params.id
 
-    if(articleId){
+    if (articleId) {
         articleRepository.get_article_by_id(articleId)
             .then(article => {
                 res.render('article/view_article.html', {'article': article})
@@ -42,5 +42,18 @@ exports.get_article = (req, res) => {
             .catch(err => {
                 console.log(err)
             })
+    }
+}
+
+exports.delete_article = (req, res) => {
+    const articleId = req.params.id
+
+    if (articleId) {
+        articleRepository.delete_article(articleId)
+            .then(result => {
+                res.redirect('/admin')
+            }).catch(err => {
+
+        })
     }
 }

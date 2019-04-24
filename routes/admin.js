@@ -14,6 +14,7 @@ routes.get('/', adminController.dashboard)
 routes.get('/article/create', articleController.create_article_action_get)
 routes.post('/article/create', urlencodedParser, articleController.create_article_action_post)
 routes.get('/article/:id', articleController.get_article)
+routes.get('/article/delete/:id', articleController.delete_article)
 
 // Category post route
 routes.get('/article/category/create', articleCategoryController.create_article_category_get)
