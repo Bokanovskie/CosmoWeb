@@ -48,7 +48,15 @@ exports.create_article_category = (formData) => {
 }
 
 exports.update_article_category = (formData) => {
-    
+
+    return new Promise((resolve, reject) => {
+        articleCategoryModel.findOneAndUpdate({'_id': formData._id}, formData)
+            .then(response => {
+                resolve(true)
+            }).catch(err => {
+                reject(err)
+        })
+    })
 }
 
 /**

@@ -40,6 +40,20 @@ exports.update_article_category_action_get = (req, res, next) => {
     }
 }
 
+exports.update_article_category_action_post = (req, res, next) => {
+    const formData = req.body
+
+    if (formData) {
+        articleCategoryRepository.update_article_category(formData)
+            .then(result => {
+                res.redirect('/admin')
+            })
+            .catch(err => {
+                next(err)
+            })
+    }
+}
+
 /**
  * Get article category view by id
  *

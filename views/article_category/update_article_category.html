@@ -6,6 +6,7 @@
     <form action="/admin/article/category/update" method="post">
         <label for="name">Name</label>
         <input id="name" name="name" type="text" value="{{ articleCategory.name }}" />
+        <input id="_id" name="_id" type="hidden" value="{{ articleCategory._id }}" />
         <input type="submit" value="Update" />
     </form>
 {% endblock %}
