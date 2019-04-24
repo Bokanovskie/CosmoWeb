@@ -1,0 +1,11 @@
+{% extends 'page_layout.html' %}
+
+{% block content %}
+    <h1>Update category post</h1>
+    <br>
+    <form action="/admin/article/category/update" method="post">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" value="{{ articleCategory.name }}" />
+        <input type="submit" value="Update" />
+    </form>
+{% endblock %}

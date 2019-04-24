@@ -18,6 +18,7 @@ exports.get_all_article = () => {
 
 /**
  * Get article by id
+ *
  * @param id | post id
  */
 exports.get_article_by_id = (id) => {
@@ -37,6 +38,7 @@ exports.get_article_by_id = (id) => {
 
 /**
  * Create article function
+ *
  * @param formData
  */
 exports.create_article = (formData) => {
@@ -51,6 +53,10 @@ exports.create_article = (formData) => {
                 reject(err)
             })
     })
+}
+
+exports.update_article = (formData) => {
+
 }
 
 exports.delete_article = (id) => {

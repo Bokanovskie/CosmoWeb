@@ -27,6 +27,19 @@ exports.create_article_category_post = (req, res) => {
         })
 }
 
+exports.update_article_category_action_get = (req, res, next) => {
+    const articleCategoryId = req.params.id
+
+    if (articleCategoryId) {
+        articleCategoryRepository.get_article_category_by_id(articleCategoryId)
+            .then(articleCategory => {
+                res.render('article_category/update_article_category.html', {'articleCategory': articleCategory})
+            }).catch(err => {
+                next(err)
+        })
+    }
+}
+
 /**
  * Get article category view by id
  *

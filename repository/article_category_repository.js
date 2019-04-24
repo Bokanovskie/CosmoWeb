@@ -47,6 +47,10 @@ exports.create_article_category = (formData) => {
     })
 }
 
+exports.update_article_category = (formData) => {
+    
+}
+
 /**
  * Delete article category
  *

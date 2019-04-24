@@ -48,6 +48,20 @@ exports.create_article_action_post = (req, res) => {
         })
 }
 
+exports.update_article_action_get = (req, res, next) => {
+    const articleId = req.params.id
+
+    if (articleId) {
+        articleRepository.get_article_by_id(articleId)
+            .then(article => {
+                res.render('article/update_article.html', {'article': article})
+            })
+            .catch(err => {
+                next(err)
+            })
+    }
+}
+
 /**
  * Get article action by id
  * @param req | Request

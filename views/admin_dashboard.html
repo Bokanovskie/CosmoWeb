@@ -23,7 +23,7 @@
                 <a href="{{ article.url }}">{{ article.title }}</a>
             </td>
             <td>
-                <a href="#">Edit</a>
+                <a href="/admin/article/category/update/{{ article._id }}">Edit</a>
                 <a href="/admin/article/delete/{{ article._id }}">Delete</a>
             </td>
         </tr>
@@ -52,7 +52,7 @@
                     <a href="{{ category.url }}">{{ category.name }}</a>
                 </td>
                 <td>
-                    <a href="#">Edit</a>
+                    <a href="/admin/article/category/update/{{ category._id }}">Edit</a>
                     <a href="/admin/article/category/delete/{{ category._id }}">Delete</a>
                 </td>
             </tr>
