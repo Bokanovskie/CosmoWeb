@@ -57,6 +57,15 @@ exports.create_article = (formData) => {
 
 exports.update_article = (formData) => {
 
+    return new Promise((resolve, reject) => {
+        articleModel.findOneAndUpdate({'_id': formData._id}, formData)
+            .then(result => {
+                resolve(true)
+            })
+            .catch(err => {
+                reject(err)
+            })
+    })
 }
 
 exports.delete_article = (id) => {
