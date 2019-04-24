@@ -1,12 +1,12 @@
-const postCategoryRepository = require('../repository/postCategoryRepository')
+const articleCategoryRepository = require('../repository/article_category_repository')
 const async = require('async')
 
 exports.dashboard = (req, res, next) => {
 
     async.parallel({
-        postCategories: function (callback) {
+        articleCategories: function (callback) {
 
-            postCategoryRepository.get_all_category_post()
+            articleCategoryRepository.get_all_article_category()
                 .then(doc => {
                     callback(null, doc)
                 })
@@ -18,7 +18,7 @@ exports.dashboard = (req, res, next) => {
 
         if (err) { return next(err) }
 
-        res.status(200).render('admin_dashboard.html', {'postCategories': results.postCategories})
+        res.status(200).render('admin_dashboard.html', {'articleCategories': results.articleCategories})
     })
 
 }

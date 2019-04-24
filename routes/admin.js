@@ -1,9 +1,9 @@
 const routes = require('express').Router()
 const bodyParser = require('body-parser')
 
-const adminController = require('../controller/adminController')
-const postController = require('../controller/postController')
-const categoryPostController = require('../controller/postCategoryController')
+const adminController = require('../controller/admin_controller')
+const articleController = require('../controller/article_controller')
+const articleCategoryController = require('../controller/article_category_controller')
 
 // create application x-www-form-urlencoded parser
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -11,13 +11,13 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 routes.get('/', adminController.dashboard)
 
 // Post routes
-routes.get('/post/create', postController.create_post_action_get)
-routes.post('/post/create', urlencodedParser, postController.create_post_action_post)
-routes.get('/post/:id', postController.post_action_get)
+routes.get('/article/create', articleController.create_article_action_get)
+routes.post('/article/create', urlencodedParser, articleController.create_article_action_post)
+routes.get('/article/:id', articleController.get_article)
 
 // Category post route
-routes.get('/post/category/create', categoryPostController.create_category_get)
-routes.post('/post/category/create', urlencodedParser, categoryPostController.create_category_post)
-routes.get('/post/category/:id', categoryPostController.post_category_action_get)
+routes.get('/article/category/create', articleCategoryController.create_article_category_get)
+routes.post('/article/category/create', urlencodedParser, articleCategoryController.create_article_category_post)
+routes.get('/article/category/:id', articleCategoryController.get_article_category)
 
 module.exports = routes

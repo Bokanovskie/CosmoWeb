@@ -1,13 +1,13 @@
-const postModel = require('../models/post.js')
+const articleModel = require('../models/article.js')
 
 /**
- * Get post by id
+ * Get article by id
  * @param id | post id
  */
-exports.get_post_by_id = (id) => {
+exports.get_article_by_id = (id) => {
     return new Promise((resolve, reject) => {
         if(id){
-            postModel.findById(id)
+            articleModel.findById(id)
                 .then(doc => {
                     resolve(doc)
                 })
@@ -19,14 +19,14 @@ exports.get_post_by_id = (id) => {
 }
 
 /**
- * Create post function
+ * Create article function
  * @param formData
  */
-exports.create_post = (formData) => {
-    let post = new postModel(formData)
+exports.create_article = (formData) => {
+    let article = new articleModel(formData)
 
     return new Promise((resolve, reject) => {
-        post.save()
+        article.save()
             .then(doc => {
                 resolve(doc)
             })
