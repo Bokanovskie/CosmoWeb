@@ -1,7 +1,11 @@
 {% extends 'page_layout.html' %}
 
 {% block content %}
-    <form action="" method="post">
-
+    <h1>Create category post</h1>
+    <br>
+    <form action="/admin/post/category/create" method="post">
+        <label for="name">Title</label>
+        <input id="name" name="name" type="text" />
+        <input type="submit" value="Create" />
     </form>
 {% endblock %}

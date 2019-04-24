@@ -3,5 +3,43 @@
 {% block content %}
     <h1>Admin dashboard</h1>
 
+    <h2>Posts</h2>
     <a href="/admin/post/create">Create post</a>
+
+
+
+    <br><br>
+
+    <h2>Category posts</h2>
+    <a href="/admin/post/category/create">Create post category</a>
+
+    <br><br>
+
+    <table>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        {% for category in postCategories %}
+            <tr>
+                <td>
+                    <a href="{{ category.url }}">{{ category.name }}</a>
+                </td>
+                <td>
+                    <a href="#">Edit</a>
+                </td>
+                <td>
+                    <a href="#">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}

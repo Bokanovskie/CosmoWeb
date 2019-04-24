@@ -17,6 +17,7 @@ routes.get('/post/:id', postController.post_action_get)
 
 // Category post route
 routes.get('/post/category/create', categoryPostController.create_category_get)
-routes.post('/post/category/create', categoryPostController.create_category_post)
+routes.post('/post/category/create', urlencodedParser, categoryPostController.create_category_post)
+routes.get('/post/category/:id', categoryPostController.post_category_action_get)
 
 module.exports = routes
